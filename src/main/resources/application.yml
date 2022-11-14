@@ -1,0 +1,35 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: 7691bb7d9fc20f1b3b7b
+            clientSecret: 74aef7f2978ee17072411dea5e0c6313ed19bb8d
+            scope:
+              - user:email
+              - read:user
+
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://localhost:5432/writer
+    username: writer
+    password: -123writer
+    hikari:
+      maximum-pool-size: 30
+    configuration:
+      auto-commit: false
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate.jdbc.time_zone: UTC
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+
+
+
+
+
